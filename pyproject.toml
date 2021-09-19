@@ -13,7 +13,7 @@ dynamic = ["classifiers"]
 license = {text = "Apache2.0"}
 
 [project.urls]
-homepage = ""
+homepage = "https://github.com/abersheeran/pdm-version"
 
 [project.entry-points.pdm]
 version = "pdm_version:version"
