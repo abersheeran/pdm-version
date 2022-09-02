@@ -6,7 +6,7 @@ authors = [
     {name = "abersheeran", email = "me@abersheeran.com"},
 ]
 dependencies = [
-    "pdm~=1.8",
+    "pdm>=1.8,<3.0",
 ]
 requires-python = ">=3.7"
 dynamic = ["classifiers"]
