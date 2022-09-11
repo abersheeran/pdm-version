@@ -1,6 +1,6 @@
 [project]
 name = "pdm-version"
-version = "1.0.0"
+version = "1.1.0"
 description = "Make `pdm version` like `poetry version`"
 authors = [
     {name = "abersheeran", email = "me@abersheeran.com"},
@@ -21,6 +21,3 @@ version = "pdm_version:version"
 [build-system]
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
-
-[tool]
-[tool.pdm]
