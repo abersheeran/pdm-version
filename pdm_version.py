@@ -1,6 +1,7 @@
 import argparse
 
-from pdm.cli.commands.base import BaseCommand, Project
+from pdm.cli.commands.base import BaseCommand
+from pdm.project import Project
 
 
 class VersionCommand(BaseCommand):
@@ -16,8 +17,8 @@ class VersionCommand(BaseCommand):
         :param project: the pdm project instance
         :param options: the parsed Namespace object
         """
-        project.pyproject["project"]["version"] = options.version
-        project.write_pyproject(True)
+        project.pyproject.metadata["version"] = options.version
+        project.pyproject.write()
 
 
 def version(core):
