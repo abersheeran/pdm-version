@@ -9,7 +9,7 @@ class VersionCommand(BaseCommand):
 
     def add_arguments(self, parser: argparse.ArgumentParser) -> None:
         """Manipulate the argument parser to add more arguments"""
-        parser.add_argument("version")
+        parser.add_argument("version", nargs="?")
 
     def handle(self, project: Project, options: argparse.Namespace) -> None:
         """The command handler function.
@@ -17,8 +17,11 @@ class VersionCommand(BaseCommand):
         :param project: the pdm project instance
         :param options: the parsed Namespace object
         """
-        project.pyproject.metadata["version"] = options.version
-        project.pyproject.write()
+        if not options.version:
+            print(project.pyproject.metadata["version"])
+        else:
+            project.pyproject.metadata["version"] = options.version
+            project.pyproject.write()
 
 
 def version(core):
