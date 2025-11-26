@@ -20,7 +20,9 @@ class VersionCommand(BaseCommand):
         if not options.version:
             print(project.pyproject.metadata["version"])
         else:
-            project.pyproject.open_for_write()
+            open_for_write = getattr(project.pyproject, "open_for_write", None)
+            if callable(open_for_write):
+                open_for_write()
             project.pyproject.metadata["version"] = options.version
             project.pyproject.write()
 
