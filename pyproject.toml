@@ -1,6 +1,6 @@
 [project]
 name = "pdm-version"
-version = "2.1.0"
+version = "2.2.0"
 description = "Make `pdm version` like `poetry version`"
 authors = [
     {name = "abersheeran", email = "me@abersheeran.com"},
